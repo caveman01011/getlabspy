@@ -1,0 +1,421 @@
+/* ================================================== */
+/* HERO SECTION - BOOTSTRAP MAXIMIZED                 */
+/* Only custom CSS where Bootstrap can't help         */
+/* ================================================== */
+
+/* Visual Theme (Bootstrap can't do gradients) */
+.hero-section {
+    background: linear-gradient(135deg, #f9fafb 0%, #dbeafe 100%);
+    padding: 120px 0 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Typography - Fluid sizing (Bootstrap's fs-* is fixed) */
+.hero-headline {
+    font-family: 'Alice', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #0f172a;
+}
+
+.hero-subheadline {
+    font-family: 'Urbanist', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* Custom Button Styling (Bootstrap base + enhancements) */
+.btn-cta-primary {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: white;
+    font-weight: 500;
+    padding: 0.875rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.btn-cta-primary:hover {
+    background-color: #1e40af;
+    border-color: #1e40af;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.btn-cta-secondary {
+    border: 2px solid #2563eb;
+    color: #2563eb;
+    font-weight: 500;
+    padding: 0.875rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.btn-cta-secondary:hover {
+    background-color: rgba(37, 99, 235, 0.1);
+    border-color: #1e40af;
+    color: #1e40af;
+    transform: translateY(-2px);
+}
+
+/* Mouse Logo Animation (Bootstrap has no animations) */
+.mouse-logo {
+    max-width: 100%;
+    height: auto;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+
+/* Screenshot Layering System (Complex positioning) */
+.screenshot-container {
+    margin-top: 3rem;
+}
+
+.screenshot-peek-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 400px;
+}
+
+.screenshot-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: white;
+}
+
+/* Main Screenshot */
+.screenshot-card-main {
+    position: relative;
+    z-index: 3;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.screenshot-card-main:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+}
+
+/* Side Screenshots - Desktop Only */
+.screenshot-card-left,
+.screenshot-card-right {
+    position: absolute;
+    z-index: 2;
+    max-width: 350px;
+    width: 35%;
+    opacity: 0.9;
+}
+
+.screenshot-card-left {
+    left: 0;
+    transform: rotate(-4deg) translateX(-15%) translateY(30px);
+}
+
+.screenshot-card-right {
+    right: 0;
+    transform: rotate(4deg) translateX(15%) translateY(30px);
+}
+
+.screenshot-card-left:hover,
+.screenshot-card-right:hover {
+    opacity: 1;
+    z-index: 4;
+    transform: rotate(0deg) translateY(20px) scale(1.05);
+}
+
+/* ================================================== */
+/* TABLET ENHANCEMENTS (768px+)                       */
+/* ================================================== */
+@media (min-width: 768px) {
+    .hero-section {
+        padding: 140px 0 100px 0;
+    }
+    
+    .screenshot-container {
+        margin-top: 4rem;
+    }
+    
+    .screenshot-peek-wrapper {
+        min-height: 450px;
+    }
+    
+    .screenshot-card-main {
+        max-width: 650px;
+    }
+    
+    .screenshot-card-left,
+    .screenshot-card-right {
+        max-width: 400px;
+        width: 38%;
+    }
+}
+
+/* ================================================== */
+/* DESKTOP ENHANCEMENTS (992px+)                      */
+/* ================================================== */
+@media (min-width: 992px) {
+    .hero-section {
+        padding: 160px 0 120px 0;
+    }
+    
+    .screenshot-container {
+        margin-top: 5rem;
+    }
+    
+    .screenshot-card-main {
+        max-width: 700px;
+    }
+    
+    .screenshot-card-left {
+        max-width: 450px;
+        width: 40%;
+        transform: rotate(-5deg) translateX(-20%) translateY(40px);
+    }
+    
+    .screenshot-card-right {
+        max-width: 450px;
+        width: 40%;
+        transform: rotate(5deg) translateX(20%) translateY(40px);
+    }
+}
+
+/* ================================================== */
+/* LARGE DESKTOP (1200px+)                            */
+/* ================================================== */
+@media (min-width: 1200px) {
+    .hero-section {
+        padding: 180px 0 140px 0;
+    }
+    
+    .screenshot-card-main {
+        max-width: 750px;
+    }
+    
+    .screenshot-card-left,
+    .screenshot-card-right {
+        max-width: 480px;
+        width: 42%;
+    }
+    
+    .screenshot-card-left {
+        transform: rotate(-6deg) translateX(-25%) translateY(50px);
+    }
+    
+    .screenshot-card-right {
+        transform: rotate(6deg) translateX(25%) translateY(50px);
+    }
+}
+
+/* ================================================== */
+/* MOBILE BREAKPOINT (below 768px)                    */
+/* Collapse side screenshots, stack vertically        */
+/* ================================================== */
+@media (max-width: 767.98px) {
+    .hero-section {
+        padding: 100px 0 60px 0;
+    }
+
+    .hero-headline, .hero-subheadline{
+        font-weight: 1.2rem;
+        text-align: center;
+    }
+
+    /* Stack screenshots vertically */
+    .screenshot-peek-wrapper {
+        flex-direction: column;
+        min-height: auto;
+        gap: 1.5rem;
+    }
+    
+    /* Reset all positioning - let flexbox handle it */
+    .screenshot-card-main,
+    .screenshot-card-left,
+    .screenshot-card-right {
+        position: relative;
+        left: auto;
+        right: auto;
+        transform: none !important;
+        opacity: 1;
+        max-width: 100%;
+        width: 100%;
+        z-index: auto;
+    }
+    
+    /* Simplified hover for touch devices */
+    .screenshot-card:hover {
+        transform: translateY(-8px) !important;
+    }
+    
+    /* Reorder: Main first, then sides */
+    .screenshot-card-main { order: 1; }
+    .screenshot-card-left { order: 2; }
+    .screenshot-card-right { order: 3; }
+    
+    /* Smaller shadow on mobile */
+    .screenshot-card {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .screenshot-card-main {
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* ================================================== */
+/* SMALL MOBILE (below 576px)                         */
+/* Tighter spacing, full-width buttons                */
+/* ================================================== */
+@media (max-width: 575.98px) {
+    .hero-section {
+        padding: 80px 0 40px 0;
+    }
+    
+    /* Override clamp for very small screens */
+    .hero-headline {
+        font-size: 1.75rem;
+    }
+    
+    /* Ensure buttons stack nicely - Bootstrap handles flex-col */
+    .btn-cta-primary,
+    .btn-cta-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ================================================== */
+/* ACCESSIBILITY                                      */
+/* ================================================== */
+@media (prefers-reduced-motion: reduce) {
+    .mouse-logo {
+        animation: none;
+    }
+    
+    .btn-cta-primary:hover,
+    .btn-cta-secondary:hover,
+    .screenshot-card:hover {
+        transform: none;
+    }
+}
+
+
+/* ================================================== */
+/* MOBILE CAROUSEL STYLES (below 768px)               */
+/* ================================================== */
+
+@media (max-width: 767.98px) {
+    .screenshot-container {
+        margin-top: 2rem;
+        padding: 0 1rem;
+    }
+
+    /* Carousel container */
+    #screenshotCarousel {
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    /* Active slide styling */
+    .carousel-item {
+        transition: transform 0.6s ease-in-out;
+    }
+
+    .carousel-item img {
+        border-radius: 12px;
+        aspect-ratio: 16/10;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    /* Indicators styling */
+    .carousel-indicators {
+        bottom: -3rem;
+    }
+
+    .carousel-indicators button {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #2563eb;
+        opacity: 0.3;
+        margin: 0 6px;
+    }
+
+    .carousel-indicators button.active {
+        opacity: 1;
+    }
+
+    /* Control buttons (arrows) */
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 15%;
+        opacity: 0.8;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 2rem;
+        height: 2rem;
+        background-size: 100%;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+
+    /* Optional: Caption styling */
+    .carousel-caption {
+        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 2rem 1rem 1rem;
+    }
+
+    .carousel-caption h5 {
+        color: white;
+        font-size: 1rem;
+        margin: 0;
+        font-weight: 500;
+    }
+}
+
+/* ================================================== */
+/* SMALL MOBILE TWEAKS (below 576px)                  */
+/* ================================================== */
+
+@media (max-width: 575.98px) {
+    .screenshot-container {
+        padding: 0 0.5rem;
+    }
+
+    .carousel-indicators {
+        bottom: -2.5rem;
+    }
+
+    .carousel-indicators button {
+        width: 8px;
+        height: 8px;
+        margin: 0 4px;
+    }
+}
+
+/* ================================================== */
+/* TOUCH OPTIMIZATION                                 */
+/* ================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets on mobile */
+    .carousel-control-prev,
+    .carousel-control-next {
+        min-height: 44px;
+        min-width: 

@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.alice-regular {
+  font-family: "Alice", serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+:root {
+    --primary-blue: #1e40af;
+    --secondary-blue: #3b82f6;
+    --light-blue: #dbeafe;
+    --dark-blue: #1e3a8a;
+    --white: #ffffff;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-600: #4b5563;
+    --gray-800: #1f2937;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--gray-800);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar styles have been moved to navbar.css */
+
+/* Header */
+
+/* Demo content styling */
+.demo-section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.demo-section h2 {
+    color: #1e40af;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+
+
+/* CTA Buttons Container */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+}
+
+/* Primary CTA Button */
+.btn-primary-cta {
+    background-color: #2563eb;
+    color: white;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    border: none;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary-cta:hover {
+    background-color: #1e40af;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* Secondary CTA Button */
+.btn-secondary-cta {
+    background-color: transparent;
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.65rem 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid #2563eb;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-secondary-cta:hover {
+    background-color: rgba(37, 99, 235, 0.05);
+    color: #1e40af;
+    border-color: #1e40af;
+    transform: translateY(-2px);
+}
+
+/* Screenshot Peek Container */
+.screenshot-peek-container {
+    position: relative;
+    bottom: -40px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 2rem;
+}
+
+.screenshot-wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 0.5rem; /* Reduced from 2rem to bring screenshots closer */
+    height: 400px;
+}
+
+/* Individual Screenshot Styles */
+.screenshot {
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.screenshot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Center Screenshot (Inventory List) - Prominent */
+.screenshot-center {
+    z-index: 3;
+    flex: 0 0 600px;
+    max-width: 600px;
+    transform: translateY(-20px);
+}
+
+.screenshot-center img {
+    border: 2px solid rgba(37, 99, 235, 0.2);
+}
+
+/* Side Screenshots - Peeking behind */
+.screenshot-left,
+.screenshot-right {
+    z-index: 2;
+    flex: 0 0 400px;
+    max-width: 400px;
+    opacity: 0.85;
+}
+
+.screenshot-left {
+    transform: rotate(-3deg) translateY(20px);
+}
+
+.screenshot-right {
+    transform: rotate(3deg) translateY(20px);
+}
+
+/* Clip effect - bottom 40% fades out */
+.screenshot::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to bottom, transparent 0%, white 100%);
+    pointer-events: none;
+}
+
+/* Hover effects */
+.screenshot:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.screenshot-left:hover {
+    transform: rotate(-3deg) translateY(10px) scale(1.02);
+}
+
+.screenshot-right:hover {
+    transform: rotate(3deg) translateY(10px) scale(1.02);
+}
+
+/* Trust logo styles moved to trust.css */
+
+/* Feature section styles moved to features.css */
+
+/* Headings responsive sizing */
+h2 {
+    font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Hero responsive rules migrated to hero.css; transitional section rules moved to features.css */
+
+/* Additional mobile spacing adjustments */
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0;
+    }
+}
+/* CTA styles are now located in cta.css */
+
+/* Footer rules migrated to footer.css */
+
+@media (max-width: 1200px) {
+    .screenshot-wrapper {
+        gap: 1rem;
+    }
+    
+    .screenshot-center {
+        flex: 0 0 500px;
+        max-width: 500px;
+    }
+    
+    .screenshot-left,
+    .screenshot-right {
+        flex: 0 0 320px;
+        max-width: 320px;
+    }
+}
+        
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-stats {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    /* Reusable responsive helpers */
+    /* hero-content and hero-title rules remain here */
+    .screenshot-peek-container {
+        position: relative;
+        bottom: 0;
+        padding: 2rem 0;
+    }
+    
+    .screenshot-wrapper {
+        height: auto;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .screenshot-center,
+    .screenshot-left,
+    .screenshot-right {
+        max-width: 100%;
+        transform: none !important;
+    }
+    
+    /* feature and footer/cta-specific responsive rules have been relocated */
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .about-stats {
+        flex-direction: column;
+    }
+}
+
+/* Override all fonts to use Urbanist */
+* {
+    font-family: 'Urbanist', sans-serif !important;
+}
+
+/* Reset specific elements that might override the font */
+body,
+h1, h2, h3, h4, h5, h6,
+p, span, a, input, button, textarea {
+    font-family: 'Urbanist', sans-serif !important;
+}
+
+
+
+/* Mobile adjustments */
+@media (max-width: 991px) {
+
+    /* hero headline/subheadline rules moved to hero.css */
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-primary-cta,
+    .btn-secondary-cta {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    
+
+    /* Navbar-responsive rules moved to navbar.css */
+    
+    /* Stack screenshots vertically on tablets */
+    .screenshot-wrapper {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 1.5rem;
+    }
+    
+    .screenshot-center,
+    .screenshot-left,
+    .screenshot-right {
+        flex: 1 1 auto;
+        max-width: 500px;
+        transform: none !important;
+    }
+    
+    .screenshot-center {
+        order: 1;
+    }
+    
+    .screenshot-left {
+        order: 2;
+    }
+    
+    .screenshot-right {
+        order: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    /* hero-specific responsive rules moved to hero.css */
+    
+    /* Button touch targets */
+    .btn-primary-cta,
+    .btn-secondary-cta {
+        padding: 1rem 1.5rem;
+        width: 100%;
+        font-size: 1rem;
+        min-height: 44px;
+    }
+    
+    /* Screenshot adjustments */
+    .screenshot-peek-container {
+        position: relative;
+        bottom: 0;
+        padding: 2rem 0;
+    }
+}

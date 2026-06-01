@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | LabSpy</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="assets/styles/navbar.css">
+    <link rel="stylesheet" href="assets/styles/footer.css">
+    <link rel="icon" type="image/x-icon" href="assets/labspy-logo.png">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-labspy">
+    <div class="container position-relative">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/LabSpy-brand.svg" alt="LabSpy Logo" class="logo-icon" height="64" width="280">
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="d-flex flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="d-flex gap-2 ms-auto">
+                <a href="#signup" class="btn-login">Log in</a>
+                <a href="#signup" class="btn-get-started">Get started</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ============================================================ -->
+<!-- HERO                                                         -->
+<!-- ============================================================ -->
+<section style="background: linear-gradient(160deg, #f4f9ff 0%, #dbeafe 100%); padding: 7rem 0 4rem; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -120px; right: -120px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%); pointer-events: none;"></div>
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-12 col-lg-8">
+                <h1 class="alice-regular mb-3" style="font-size: clamp(2rem, 5.5vw, 3.5rem); line-height: 1.15; color: #0f172a; letter-spacing: -0.01em;">
+                    Get in touch
+                </h1>
+                <p style="font-size: clamp(1rem, 2vw, 1.15rem); color: #64748b; line-height: 1.65;">
+                    Have a question about LabSpy? Just send us an email
+                    and we'll get back to you as soon as possible.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CONTACT FORM                                                 -->
+<!-- ============================================================ -->
+<section class="py-5">
+    <div class="container">
+
+        <div style="background: white; border: 1.5px solid #e2e8f0; border-radius: 20px; padding: 2.5rem; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04); max-width: 600px; margin: 0 auto;" class="mb-5">
+
+            <!-- Success message (hidden by default) -->
+            <div class="alert alert-success d-none" id="successMessage" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                Thanks for reaching out! We'll get back to you within 24 hours.
+            </div>
+
+            <!-- Error message (hidden by default) -->
+            <div class="alert alert-danger d-none" id="errorMessage" role="alert">
+                <i class="bi bi-exclamation-circle-fill me-2"></i>
+                <span id="errorText">Something went wrong. Please try again.</span>
+            </div>
+
+            <!-- Contact form -->
+            <form id="contactForm">
+
+                <div class="mb-3">
+                    <label for="firstName" class="form-label fw-600">First name</label>
+                    <input type="text" id="firstName" name="first_name" class="form-control"
+                           placeholder="Jane" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="lastName" class="form-label fw-600">Last name</label>
+                    <input type="text" id="lastName" name="last_name" class="form-control"
+                           placeholder="Smith" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-600">Email address</label>
+                    <input type="email" id="email" name="email" class="form-control"
+                           placeholder="jane@university.edu" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="institution" class="form-label fw-600">Institution / Lab</label>
+                    <input type="text" id="institution" name="institution" class="form-control"
+                           placeholder="e.g. Smith Lab, MIT">
+                </div>
+
+                <div class="mb-3">
+                    <label for="subject" class="form-label fw-600">Subject</label>
+                    <select id="subject" name="subject" class="form-select" required>
+                        <option value="" disabled selected>Select a topic</option>
+                        <option value="demo">Request a demo</option>
+                        <option value="pricing">Pricing question</option>
+                        <option value="features">Feature request</option>
+                        <option value="integration">Integration / API</option>
+                        <option value="support">Technical support</option>
+                        <option value="partnership">Partnership inquiry</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label fw-600">Message</label>
+                    <textarea id="message" name="message" class="form-control" style="min-height: 140px; resize: vertical;"
+                              placeholder="Tell us more..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-3 fw-600">
+                    <i class="bi bi-send-fill me-2"></i>
+                    Send message
+                </button>
+
+                <p class="text-muted small mt-3 text-center mb-0">
+                    <i class="bi bi-lock-fill"></i>
+                    We respect your privacy. We'll never share your email.
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-4">
+            <div>
+                <img src="assets/LabSpy-brand-white.svg" alt="LabSpy" class="footer-logo">
+                <p class="mb-0 mt-1" style="font-size:0.8rem;">Streamlining biotech lab operations worldwide.</p>
+                <p class="mb-0" style="font-size:0.8rem;">EU based<img
+                    src="assets/icons/eu-flag.svg"
+                    alt="EU Flag"
+                    height="20"
+                    width="30" />
+                </p>
+                <p class="mb-0" style="font-size:0.8rem;">Funded entirely by our subscribers.</p>
+            </div>
+            <div class="d-flex gap-4 flex-wrap">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#demo">Demo</a>
+                <a href="contact.html">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+        <hr style="border-color: rgba(255,255,255,0.1); margin: 1.5rem 0;">
+        <p class="mb-0" style="font-size:0.8rem;">&copy; 2026 LabSpy. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+<script src="assets/js/navbar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Simple client-side form handling
+    (function () {
+        const form = document.getElementById('contactForm');
+        const successMsg = document.getElementById('successMessage');
+        const errorMsg = document.getElementById('errorMessage');
+        const errorText = document.getElementById('errorText');
+
+        if (!form) return;
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            // Hide previous messages
+            successMsg.classList.add('d-none');
+            errorMsg.classList.add('d-none');
+
+            const formData = new FormData(form);
+
+            try {
+                // This example just shows the success message for demonstration
+                // In production, you would send this to a backend service
+                console.log('Form data:', {
+                    first_name: formData.get('first_name'),
+                    last_name: formData.get('last_name'),
+                    email: formData.get('email'),
+                    institution: formData.get('institution'),
+                    subject: formData.get('subject'),
+                    message: formData.get('message')
+                });
+
+                // Simulate successful submission
+                form.reset();
+                successMsg.classList.remove('d-none');
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } catch (error) {
+                errorText.textContent = 'An error occurred. Please try again later.';
+                errorMsg.classList.remove('d-none');
+            }
+        });
+    })();
+</script>
+</body>
+</html>

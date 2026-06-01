@@ -1,0 +1,102 @@
+/* ── Footer ───────────────────────────────────────── */
+.footer {
+    background: #0f172a;
+    color: rgba(255,255,255,0.6);
+    padding: 2.5rem 0;
+    font-size: 0.875rem;
+}
+
+.footer a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.footer-logo {
+    height: 36px;
+    margin-bottom: 0.5rem;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+/* ── Testimonial ──────────────────────────────────── */
+.testimonial-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.testimonial-card blockquote {
+    font-size: 0.875rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+
+.testimonial-card .author {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.testimonial-card .author-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #6366f1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.testimonial-card .author-info small {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.testimonial-card .author-info strong {
+    font-size: 0.825rem;
+}
+
+/* ── Fade-in animation ────────────────────────────── */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+    animation: fadeUp 0.55s ease both;
+}
+
+.fade-up-1 { animation-delay: 0.05s; }
+.fade-up-2 { animation-delay: 0.15s; }
+.fade-up-3 { animation-delay: 0.25s; }
+.fade-up-4 { animation-delay: 0.35s; }
+.fade-up-5 { animation-delay: 0.45s; }
+
+/* ── Responsive tweaks ────────────────────────────── */
+@media (max-width: 991px) {
+    .waitlist-hero {
+        padding: 6rem 0 3rem;
+    }
+    .waitlist-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .counter-strip {
+        font-size: 0.8rem;
+    }
+}

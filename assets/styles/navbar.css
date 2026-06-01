@@ -1,0 +1,131 @@
+/* Navbar base styles */
+        .navbar-labspy {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem;
+            overflow: hidden;
+        }
+
+        .navbar-labspy *{
+            overflow-x: hidden;
+        }
+
+        /* Scrolled state - compressed */
+        .navbar-labspy.scrolled {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Nav links */
+        .navbar-nav .nav-link {
+            color: #374151 !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.2s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #2563eb !important;
+            background-color: #9fa8ff1a !important;
+            border-radius: 1rem;
+        }
+
+        /* CTA Buttons in navbar */
+        .btn-login,
+        .btn-get-started {
+            font-weight: 600;
+            padding: 0.625rem 1.5rem;
+            border-radius: 1rem;
+            border: none;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .btn-login {
+            background-color: #acacac;
+            color: rgb(0, 0, 0);
+        }
+
+        .btn-login:hover {
+            background-color: #8f8f8f;
+        }
+
+        .btn-get-started {
+            background-color: #0c21e3;
+            color: rgb(255, 255, 255);
+        }
+
+        .btn-get-started:hover {
+            background-color: #0012b4;
+        }
+
+        /* Content container constraint */
+        .navbar-labspy .container {
+            max-width: 1400px;
+        }
+
+        /* Mobile navbar improvements */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: rgba(255, 255, 255, 0.98);
+                padding: 1rem;
+                border-radius: 1rem;
+                margin-top: 1rem;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar-nav {
+                padding: 0.5rem 0;
+            }
+
+            .navbar-nav .nav-link {
+                padding: 0.75rem 1rem !important;
+                border-radius: 0.5rem;
+            }
+
+            .navbar-nav .nav-link:hover {
+                background-color: #f3f4f6 !important;
+            }
+
+            .d-flex.gap-2 {
+                flex-direction: column;
+                gap: 0.5rem !important;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            .btn-login,
+            .btn-get-started {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar-nav {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        /* Fix: Ensure navbar is always visible on desktop */
+    @media (min-width: 992px) {
+        .navbar-collapse {
+            display: flex !important;
+            flex-basis: auto;
+        }
+        
+        .navbar-nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
