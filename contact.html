@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with the LabSpy team. Ask about pricing, request a demo, or send us a feature request — we typically reply within 24 hours.">
     <title>Contact | LabSpy</title>
     <link rel="stylesheet" href="assets/styles/styles.css">
     <link rel="stylesheet" href="assets/styles/navbar.css">
@@ -92,7 +93,8 @@
             </div>
 
             <!-- Contact form -->
-            <form id="contactForm">
+            <form id="contactForm" name="contact" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact">
 
                 <div class="mb-3">
                     <label for="firstName" class="form-label fw-600">First name</label>
@@ -168,7 +170,7 @@
                 <a href="index.html#features">Features</a>
                 <a href="index.html#demo">Demo</a>
                 <a href="contact.html">Contact</a>
-                <a href="#">Privacy Policy</a>
+                <a href="#"> licy</a>
             </div>
         </div>
         <hr style="border-color: rgba(255,255,255,0.1); margin: 1.5rem 0;">
@@ -190,35 +192,26 @@
 
         if (!form) return;
 
-        form.addEventListener('submit', async function (e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Hide previous messages
             successMsg.classList.add('d-none');
             errorMsg.classList.add('d-none');
 
-            const formData = new FormData(form);
-
-            try {
-                // This example just shows the success message for demonstration
-                // In production, you would send this to a backend service
-                console.log('Form data:', {
-                    first_name: formData.get('first_name'),
-                    last_name: formData.get('last_name'),
-                    email: formData.get('email'),
-                    institution: formData.get('institution'),
-                    subject: formData.get('subject'),
-                    message: formData.get('message')
-                });
-
-                // Simulate successful submission
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(new FormData(form)).toString()
+            })
+            .then(function () {
                 form.reset();
                 successMsg.classList.remove('d-none');
                 successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            } catch (error) {
+            })
+            .catch(function () {
                 errorText.textContent = 'An error occurred. Please try again later.';
                 errorMsg.classList.remove('d-none');
-            }
+            });
         });
     })();
 </script>
