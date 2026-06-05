@@ -91,7 +91,9 @@
                 <span id="errorText">Something went wrong. Please try again.</span>
             </div>
 
-            <form id="waitlistForm">
+            <form id="waitlistForm" name="waitlist" method="POST" data-netlify="true">
+
+                <input type="hidden" name="form-name" value="waitlist">
 
                 <div class="mb-3">
                     <label for="name" class="form-label fw-600">Full name</label>
@@ -145,12 +147,6 @@
             <div>
                 <img src="assets/LabSpy-brand-white.svg" alt="LabSpy" class="footer-logo">
                 <p class="mb-0 mt-1" style="font-size:0.8rem;">Streamlining biotech lab operations worldwide.</p>
-                <p class="mb-0" style="font-size:0.8rem;">EU based<img
-                    src="assets/icons/eu-flag.svg"
-                    alt="EU Flag"
-                    height="20"
-                    width="30" />
-                </p>
                 <p class="mb-0" style="font-size:0.8rem;">Funded entirely by our subscribers.</p>
             </div>
             <div class="d-flex gap-4 flex-wrap">
@@ -189,13 +185,16 @@
             submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Joining...';
 
             const formData = new FormData(form);
+            const encoded = new URLSearchParams(formData).toString();
 
             try {
-                // Replace this with your actual waitlist endpoint
-                console.log('Waitlist signup:', {
-                    name: formData.get('name'),
-                    email: formData.get('email'),
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: encoded,
                 });
+
+                if (!response.ok) throw new Error('Network response was not ok');
 
                 form.reset();
                 form.classList.add('d-none');
