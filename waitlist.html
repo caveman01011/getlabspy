@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | LabSpy</title>
+    <title>Join the Waitlist | LabSpy</title>
     <link rel="stylesheet" href="assets/styles/styles.css">
     <link rel="stylesheet" href="assets/styles/navbar.css">
     <link rel="stylesheet" href="assets/styles/footer.css">
@@ -15,6 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 </head>
 <body>
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-labspy">
     <div class="container position-relative">
@@ -45,111 +46,94 @@
             </div>
 
             <div class="d-flex gap-2 ms-auto">
-                <a href="waitlist.html" class="btn-get-started">Join Waitlist!</a>
+                <a href="#signup" class="btn-login">Log in</a>
+                <a href="#signup" class="btn-get-started">Get started</a>
             </div>
         </div>
     </div>
 </nav>
 
-<!-- ============================================================ -->
-<!-- HERO                                                         -->
-<!-- ============================================================ -->
+<!-- Hero -->
 <section style="background: linear-gradient(160deg, #f4f9ff 0%, #dbeafe 100%); padding: 7rem 0 4rem; position: relative; overflow: hidden;">
     <div style="position: absolute; top: -120px; right: -120px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%); pointer-events: none;"></div>
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-12 col-lg-8">
+                <div class="badge mb-3 px-3 py-2" style="background: rgba(37,99,235,0.1); color: #1e40af; font-size: 0.85rem; font-weight: 600; border-radius: 20px;">
+                    <i class="bi bi-hourglass-split me-1"></i> Early access — limited spots
+                </div>
                 <h1 class="alice-regular mb-3" style="font-size: clamp(2rem, 5.5vw, 3.5rem); line-height: 1.15; color: #0f172a; letter-spacing: -0.01em;">
-                    Get in touch
+                    Be the first to get LabSpy
                 </h1>
                 <p style="font-size: clamp(1rem, 2vw, 1.15rem); color: #64748b; line-height: 1.65;">
-                    Have a question about LabSpy? Just send us an email
-                    and we'll get back to you as soon as possible.
+                    Join hundreds of researchers already on the list. We're rolling out access
+                    in batches — sign up and we'll email you when your spot is ready.
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ============================================================ -->
-<!-- CONTACT FORM                                                 -->
-<!-- ============================================================ -->
+<!-- Waitlist Form -->
 <section class="py-5">
     <div class="container">
 
-        <div style="background: white; border: 1.5px solid #e2e8f0; border-radius: 20px; padding: 2.5rem; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04); max-width: 600px; margin: 0 auto;" class="mb-5">
+        <div style="background: white; border: 1.5px solid #e2e8f0; border-radius: 20px; padding: 2.5rem; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04); max-width: 560px; margin: 0 auto;" class="mb-5">
 
-            <!-- Success message (hidden by default) -->
+            <!-- Success message -->
             <div class="alert alert-success d-none" id="successMessage" role="alert">
                 <i class="bi bi-check-circle-fill me-2"></i>
-                Thanks for reaching out! We'll get back to you within 24 hours.
+                You're on the list! We'll be in touch soon.
             </div>
 
-            <!-- Error message (hidden by default) -->
+            <!-- Error message -->
             <div class="alert alert-danger d-none" id="errorMessage" role="alert">
                 <i class="bi bi-exclamation-circle-fill me-2"></i>
                 <span id="errorText">Something went wrong. Please try again.</span>
             </div>
 
-            <!-- Contact form -->
-            <form id="contactForm">
+            <form id="waitlistForm">
 
                 <div class="mb-3">
-                    <label for="firstName" class="form-label fw-600">First name</label>
-                    <input type="text" id="firstName" name="first_name" class="form-control"
-                           placeholder="Jane" required>
+                    <label for="name" class="form-label fw-600">Full name</label>
+                    <input type="text" id="name" name="name" class="form-control"
+                           placeholder="Jane Smith" required>
                 </div>
 
-                <div class="mb-3">
-                    <label for="lastName" class="form-label fw-600">Last name</label>
-                    <input type="text" id="lastName" name="last_name" class="form-control"
-                           placeholder="Smith" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="email" class="form-label fw-600">Email address</label>
+                <div class="mb-4">
+                    <label for="email" class="form-label fw-600">Work email</label>
                     <input type="email" id="email" name="email" class="form-control"
                            placeholder="jane@university.edu" required>
                 </div>
 
-                <div class="mb-3">
-                    <label for="institution" class="form-label fw-600">Institution / Lab</label>
-                    <input type="text" id="institution" name="institution" class="form-control"
-                           placeholder="e.g. Smith Lab, MIT">
-                </div>
-
-                <div class="mb-3">
-                    <label for="subject" class="form-label fw-600">Subject</label>
-                    <select id="subject" name="subject" class="form-select" required>
-                        <option value="" disabled selected>Select a topic</option>
-                        <option value="demo">Request a demo</option>
-                        <option value="pricing">Pricing question</option>
-                        <option value="features">Feature request</option>
-                        <option value="integration">Integration / API</option>
-                        <option value="support">Technical support</option>
-                        <option value="partnership">Partnership inquiry</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="message" class="form-label fw-600">Message</label>
-                    <textarea id="message" name="message" class="form-control" style="min-height: 140px; resize: vertical;"
-                              placeholder="Tell us more..." required></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary w-100 py-3 fw-600">
-                    <i class="bi bi-send-fill me-2"></i>
-                    Send message
+                <button type="submit" id="submitBtn" class="btn btn-primary w-100 py-3 fw-600">
+                    <i class="bi bi-bell-fill me-2"></i>
+                    Join the waitlist
                 </button>
 
                 <p class="text-muted small mt-3 text-center mb-0">
                     <i class="bi bi-lock-fill"></i>
-                    We respect your privacy. We'll never share your email.
+                    No spam. We'll only email you when your access is ready.
                 </p>
 
             </form>
 
+        </div>
+
+        <!-- Social proof strip -->
+        <div class="row justify-content-center text-center g-4" style="max-width: 560px; margin: 0 auto;">
+            <div class="col-4">
+                <div style="font-size: 1.5rem; font-weight: 700; color: #0f172a;">200+</div>
+                <div class="text-muted small">researchers waiting</div>
+            </div>
+            <div class="col-4">
+                <div style="font-size: 1.5rem; font-weight: 700; color: #0f172a;">~2 weeks</div>
+                <div class="text-muted small">avg. wait time</div>
+            </div>
+            <div class="col-4">
+                <div style="font-size: 1.5rem; font-weight: 700; color: #0f172a;">Free</div>
+                <div class="text-muted small">to get started</div>
+            </div>
         </div>
 
     </div>
@@ -187,41 +171,40 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    // Simple client-side form handling
     (function () {
-        const form = document.getElementById('contactForm');
+        const form = document.getElementById('waitlistForm');
         const successMsg = document.getElementById('successMessage');
         const errorMsg = document.getElementById('errorMessage');
         const errorText = document.getElementById('errorText');
+        const submitBtn = document.getElementById('submitBtn');
 
         if (!form) return;
 
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
 
-            // Hide previous messages
             successMsg.classList.add('d-none');
             errorMsg.classList.add('d-none');
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Joining...';
 
             const formData = new FormData(form);
 
             try {
-                // This example just shows the success message for demonstration
-                // In production, you would send this to a backend service
-                console.log('Form data:', {
-                    first_name: formData.get('first_name'),
-                    last_name: formData.get('last_name'),
+                // Replace this with your actual waitlist endpoint
+                console.log('Waitlist signup:', {
+                    name: formData.get('name'),
                     email: formData.get('email'),
-                    institution: formData.get('institution'),
-                    subject: formData.get('subject'),
-                    message: formData.get('message')
                 });
 
-                // Simulate successful submission
                 form.reset();
+                form.classList.add('d-none');
                 successMsg.classList.remove('d-none');
                 successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } catch (error) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="bi bi-bell-fill me-2"></i>Join the waitlist';
                 errorText.textContent = 'An error occurred. Please try again later.';
                 errorMsg.classList.remove('d-none');
             }
