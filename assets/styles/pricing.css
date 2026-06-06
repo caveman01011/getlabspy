@@ -23,7 +23,6 @@
 
 /* ── Pricing hero ─────────────────────────────────── */
 .pricing-hero {
-    background: linear-gradient(160deg, #f4f9ff 0%, #dbeafe 100%);
     padding: 7rem 0 2.5rem;
     position: relative;
     overflow: hidden;
@@ -130,7 +129,6 @@
 
 /* ── Plan cards ──────────────────────────────────── */
 .plans-section {
-    background: linear-gradient(180deg, #dbeafe 0%, #ffffff 35%);
     padding: 0 0 4rem;
 }
 
