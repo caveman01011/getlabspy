@@ -264,6 +264,13 @@
     .screenshot-card-left { order: 2; }
     .screenshot-card-right { order: 3; }
     
+    /* Smaller mouse logo on mobile */
+    .mouse-logo {
+        max-width: 200px;
+        margin: 0 auto;
+        display: block;
+    }
+
     /* Smaller shadow on mobile */
     .screenshot-card {
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
