@@ -17,6 +17,10 @@
     --ls-surface: #f8fafc;
 }
 
+.gradient-bg {
+    background: linear-gradient(160deg, #f4f9ff 0%, #dbeafe 100%);
+}
+
 /* ── Pricing hero ─────────────────────────────────── */
 .pricing-hero {
     background: linear-gradient(160deg, #f4f9ff 0%, #dbeafe 100%);
